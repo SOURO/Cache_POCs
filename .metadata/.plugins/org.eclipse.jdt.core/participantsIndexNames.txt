@@ -1,0 +1,19 @@
+INDEX VERSION 1.127
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\730922208.index
+\RedisCacheManagerMVCDemo\src\main\java
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2711007463.index
+\CoherenceCacheWebappDemo\src\main\resources
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1622082151.index
+\RedisCacheManagerMVCDemo\src\main\java
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\512807817.index
+\MasterSlaveRedisMVCDemo\src\main\java
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\140682481.index
+\MasterSlaveRedisMVCDemo\src\main\java
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2485194972.index
+\MasterSlaveRedisMVCDemo\src\main\java
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3381015262.index
+\RedisCacheManagerMVCDemo\src\main\java
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2079634669.index
+\MasterSlaveRedisMVCDemo\src\main\java
+D:\Cache_POCs\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1343797449.index
+\RedisCacheManagerMVCDemo\src\main\java
