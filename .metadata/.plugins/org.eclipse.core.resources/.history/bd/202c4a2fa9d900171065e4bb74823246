@@ -1,0 +1,13 @@
+package com.souro.RedissonJavaBasic;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		Config config = new Config();
+		config.useSingleServer().setAddress("127.0.0.1:6379");
+		RedissonClient client = Redisson.create(config);
+	}
+}

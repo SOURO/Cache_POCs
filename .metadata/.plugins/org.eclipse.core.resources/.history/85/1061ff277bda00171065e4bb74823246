@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.souro.SpringDataRedisdemo.errorhandler;
+
+/**
+ * @author sourabrata
+ *
+ */
+public class CustomCacheHandler {
+
+}

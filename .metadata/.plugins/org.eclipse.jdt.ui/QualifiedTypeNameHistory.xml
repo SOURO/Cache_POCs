@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.data.redis.core.BoundValueOperations"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="org.springframework.cache.CacheManager"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="org.redisson.config.Config"/>
+<fullyQualifiedTypeName name="org.redisson.api.RedissonClient"/>
+<fullyQualifiedTypeName name="org.redisson.Redisson"/>
+<fullyQualifiedTypeName name="org.redisson.api.RList"/>
+<fullyQualifiedTypeName name="org.redisson.api.RMap"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.security.KeyStore.Entry"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+<fullyQualifiedTypeName name="org.springframework.cache.interceptor.KeyGenerator"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="org.springframework.cache.Cache"/>
+<fullyQualifiedTypeName name="org.springframework.cache.annotation.CachingConfigurerSupport"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.cache.interceptor.CacheErrorHandler"/>
+<fullyQualifiedTypeName name="com.souro.SpringDataRedisdemo.errorhandler.CustomCacheHandler"/>
+<fullyQualifiedTypeName name="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+<fullyQualifiedTypeName name="org.springframework.data.redis.connection.RedisClusterConfiguration"/>
+<fullyQualifiedTypeName name="org.springframework.data.redis.connection.RedisNode"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.config.MethodInvokingFactoryBean"/>
+<fullyQualifiedTypeName name="org.springframework.data.redis.cache.RedisCacheWriter"/>
+<fullyQualifiedTypeName name="com.souro.service.CustomCacheWriter"/>
+<fullyQualifiedTypeName name="org.springframework.data.redis.connection.RedisConnectionFactory"/>
+<fullyQualifiedTypeName name="com.souro.errorhandler.CustomCacheErrorHandler"/>
+</qualifiedTypeNameHistroy>

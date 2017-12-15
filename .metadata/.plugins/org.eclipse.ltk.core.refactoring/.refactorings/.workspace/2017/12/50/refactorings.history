@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;AWSMasterSlaveDemo&apos; to &apos;AWSClusterDemo&apos;" description="Rename resource &apos;AWSMasterSlaveDemo&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/AWSMasterSlaveDemo" name="AWSClusterDemo" stamp="1512997181487" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;AWSClusterMVCDemo&apos; to &apos;AWSMasterSlaveDemo&apos;" description="Rename resource &apos;AWSClusterMVCDemo&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/AWSClusterMVCDemo" name="AWSMasterSlaveDemo" stamp="1512997208412" updateReferences="true"/>
+</session>

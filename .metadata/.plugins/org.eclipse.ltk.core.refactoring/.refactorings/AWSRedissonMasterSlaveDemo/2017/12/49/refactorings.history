@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.souro.errorhandler.CustomCacheHandler&apos; to &apos;CustomCacheErrorHandler&apos;&#x0D;&#x0A;- Original project: &apos;RedisCacheManagerMVCDemo&apos;&#x0D;&#x0A;- Original element: &apos;com.souro.errorhandler.CustomCacheHandler&apos;&#x0D;&#x0A;- Renamed element: &apos;com.souro.errorhandler.CustomCacheErrorHandler&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CustomCacheHandler&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.souro.errorhandler{CustomCacheHandler.java[CustomCacheHandler" matchStrategy="1" name="CustomCacheErrorHandler" qualified="false" references="true" similarDeclarations="false" stamp="1512651051973" textual="false" version="1.0"/>
+</session>

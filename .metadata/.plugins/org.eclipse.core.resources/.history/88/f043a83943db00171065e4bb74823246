@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.souro.service;
+
+import org.springframework.data.redis.cache.RedisCacheWriter;
+
+/**
+ * @author sourabrata
+ *
+ */
+public class CustomCacheWriter implements RedisCacheWriter {
+
+}
