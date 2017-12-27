@@ -1,5 +1,6 @@
-D:\Cache_POCs\AWSMasterSlaveDemo\src\main\java\com\souro\dao\ResearchDao.java
-D:\Cache_POCs\AWSMasterSlaveDemo\src\main\java\com\souro\errorhandler\CustomCacheErrorHandler.java
-D:\Cache_POCs\AWSMasterSlaveDemo\src\main\java\com\souro\controller\ResearchControllerDemo.java
-D:\Cache_POCs\AWSMasterSlaveDemo\src\main\java\com\souro\service\ResearchService.java
-D:\Cache_POCs\AWSMasterSlaveDemo\src\main\java\com\souro\config\AppConfig.java
+D:\Cache_POCs\AWSLettuceMasterSlaveDemo\src\main\java\com\souro\service\CustomCacheWriter.java
+D:\Cache_POCs\AWSLettuceMasterSlaveDemo\src\main\java\com\souro\dao\ResearchDao.java
+D:\Cache_POCs\AWSLettuceMasterSlaveDemo\src\main\java\com\souro\controller\ResearchControllerDemo.java
+D:\Cache_POCs\AWSLettuceMasterSlaveDemo\src\main\java\com\souro\errorhandler\CustomCacheErrorHandler.java
+D:\Cache_POCs\AWSLettuceMasterSlaveDemo\src\main\java\com\souro\service\ResearchService.java
+D:\Cache_POCs\AWSLettuceMasterSlaveDemo\src\main\java\com\souro\config\AppConfig.java

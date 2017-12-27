@@ -17,7 +17,7 @@ public class ResearchService{
 	private static final Logger logg = LoggerFactory.getLogger(ResearchService.class);
 	
 	@Cacheable(value="Souro_MSCache1")
-	public ResearchDao getDetails(int id){
+	public ResearchDao getDetails(String id){
 		ResearchDao research = new ResearchDao();
 		research.setResearch_id(id);
 		research.setResearch_duration(3.5);

@@ -1,5 +1,6 @@
 com\souro\errorhandler\CustomCacheErrorHandler.class
 com\souro\service\ResearchService.class
 com\souro\config\AppConfig.class
-com\souro\dao\ResearchDao.class
 com\souro\controller\ResearchControllerDemo.class
+com\souro\service\CustomCacheWriter.class
+com\souro\dao\ResearchDao.class

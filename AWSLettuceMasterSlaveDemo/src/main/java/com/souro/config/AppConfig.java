@@ -4,14 +4,7 @@
 package com.souro.config;
 
 import java.time.Duration;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
-import org.redisson.Redisson;
-import org.redisson.api.RedissonClient;
-import org.redisson.config.Config;
-import org.redisson.spring.cache.CacheConfig;
-import org.redisson.spring.cache.RedissonSpringCacheManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
@@ -27,7 +20,7 @@ import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisClusterConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisNode;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import com.souro.errorhandler.CustomCacheErrorHandler;
@@ -56,24 +49,30 @@ public class AppConfig extends CachingConfigurerSupport {
 
 	 @Bean
 	    RedisClusterConfiguration redisClusterConfiguration() {
-	    	RedisClusterConfiguration clusterConfig = new RedisClusterConfiguration();
-	    	RedisNode rn = new RedisNode(redisHost,redisPort);
-	    	clusterConfig.addClusterNode(rn);
-	        return clusterConfig;
+		 RedisClusterConfiguration clusterConfiguration = new RedisClusterConfiguration();
+	        clusterConfiguration.addClusterNode(new RedisNode("redis://souro-cluster-dsbld-001.ltvsn1.0001.use2.cache.amazonaws.com",6379));
+	        clusterConfiguration.addClusterNode(new RedisNode("redis://souro-cluster-dsbld-002.ltvsn1.0001.use2.cache.amazonaws.com",6379));
+	        clusterConfiguration.addClusterNode(new RedisNode("redis://souro-cluster-dsbld-003.ltvsn1.0001.use2.cache.amazonaws.com",6379));
+	        return clusterConfiguration;
 	    }
 
 	    @Bean
 	    RedisConnectionFactory redisConnectionFactory() {
-	    	RedisClient redisClient = RedisClient.create();
+	    	/*RedisClient redisClient = RedisClient.create();
 
-	        List<RedisURI> nodes = Arrays.asList(RedisURI.create("redis://host1"),
-	                RedisURI.create("redis://host2"),
-	                RedisURI.create("redis://host3"));
+	       Iterable<RedisNode> nodes = Arrays.asList(RedisURI.create("redis://souro-cluster-dsbld-001.ltvsn1.0001.use2.cache.amazonaws.com:6379"),
+	                RedisURI.create("redis://souro-cluster-dsbld-002.ltvsn1.0001.use2.cache.amazonaws.com:6379"),
+	                RedisURI.create("redis://souro-cluster-dsbld-003.ltvsn1.0001.use2.cache.amazonaws.com:6379"));*/
 
-	        StatefulRedisMasterSlaveConnection<String, String> connection = MasterSlave
+	        /*StatefulRedisMasterSlaveConnection<String, String> connection = MasterSlave
 	                .connect(redisClient, new Utf8StringCodec(), nodes);
-	        connection.setReadFrom(ReadFrom.MASTER_PREFERRED);
-	    }
+	        connection.setReadFrom(ReadFrom.MASTER_PREFERRED);*/
+	        
+	        
+	        LettuceConnectionFactory conectionFactory = new LettuceConnectionFactory(redisClusterConfiguration());
+	        
+	        return conectionFactory;
+	    } 
 
 	    @Bean
 	    RedisTemplate<Object, Object> redisTemplate() {
@@ -93,8 +92,8 @@ public class AppConfig extends CachingConfigurerSupport {
 	    	RedisCacheConfiguration cacheConfig = RedisCacheConfiguration.defaultCacheConfig();
 	    	cacheConfig.entryTtl(Duration.ofSeconds(ttlExpire));
 	    	//RedisCacheWriter cacheWriter = new RedisCacheWriter();
-	    	RedisCacheManager rm= new RedisCacheManager(customCacheWriter(),cacheConfig);
-	        //RedisCacheManager rm= RedisCacheManager.create(redisConnectionFactory());
+	    	//RedisCacheManager rm= new RedisCacheManager(customCacheWriter(),cacheConfig);
+	        RedisCacheManager rm= RedisCacheManager.create(redisConnectionFactory());
 	    	//rm.setExpires(cacheMap);
 	        //rm.setDefaultExpiration(300);
 	    	return rm;

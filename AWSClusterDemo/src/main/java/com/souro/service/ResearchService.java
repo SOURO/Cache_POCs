@@ -16,14 +16,14 @@ import com.souro.dao.ResearchDao;
 public class ResearchService{
 	private static final Logger logg = LoggerFactory.getLogger(ResearchService.class);
 	
-	@Cacheable(value="research")
-	public ResearchDao getDetails(int id){
+	@Cacheable(value="Souro_MSCache1")
+	public ResearchDao getDetails(String id){
 		ResearchDao research = new ResearchDao();
 		research.setResearch_id(id);
 		research.setResearch_duration(3.5);
 		research.setResearch_field("Machine Learning");
-		//System.out.println("Value (for Id: "+ id  +") is not getting accessed from Cache");
-		logg.info("Value (for Id: "+ id  +") is not getting retrieved from Cache");
+		System.out.println("Value (for Id: "+ id  +") is not getting accessed from Cache");
+		//logg.info("Value (for Id: "+ id  +") is not getting retrieved from Cache");
 		return research;
 	}
 	

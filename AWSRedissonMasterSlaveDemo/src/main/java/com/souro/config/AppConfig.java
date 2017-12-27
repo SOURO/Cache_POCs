@@ -20,7 +20,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.souro.controller.ResearchControllerDemo;
 import com.souro.errorhandler.CustomCacheErrorHandler;
 import com.souro.service.ResearchService;
 
@@ -31,7 +34,7 @@ import com.souro.service.ResearchService;
 
 @Configuration
 @EnableCaching
-@ComponentScan("com.memorynotfound")
+@ComponentScan("com.souro")
 @PropertySource("classpath:/redis.properties")
 public class AppConfig extends CachingConfigurerSupport {
 
@@ -42,6 +45,14 @@ public class AppConfig extends CachingConfigurerSupport {
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+	@Bean
+	public ViewResolver configureViewResolver() {
+		InternalResourceViewResolver viewResolve = new InternalResourceViewResolver();
+		viewResolve.setPrefix("/WEB-INF/jsp/");
+		viewResolve.setSuffix(".jsp");
+		return viewResolve;
 	}
 
 	@Bean
@@ -61,7 +72,7 @@ public class AppConfig extends CachingConfigurerSupport {
 	@Bean
 	public CacheConfig cacheConfig() {
 		CacheConfig cacheConfig = new CacheConfig();
-		cacheConfig.setTTL(50000);
+		cacheConfig.setTTL(500000);
 		return cacheConfig;
 	}
 
@@ -78,6 +89,12 @@ public class AppConfig extends CachingConfigurerSupport {
 	@Bean
 	ResearchService reserachService() {
 		return new ResearchService();
+	}
+
+	@Bean
+	ResearchControllerDemo researchControllerDemo() {
+		ResearchControllerDemo researchControllerDemo = new ResearchControllerDemo();
+		return researchControllerDemo;
 	}
 
 	@Override

@@ -12,15 +12,15 @@ import java.io.Serializable;
 public class ResearchDao implements Serializable {
 	private static final long serialVersionUID = 8975053469033922985L;
 	
-	private int research_id;
+	private String research_id;
 	private String research_field;
 	private double research_duration;
 
-	public int getResearch_id() {
+	public String getResearch_id() {
 		return research_id;
 	}
 
-	public void setResearch_id(int research_id) {
+	public void setResearch_id(String research_id) {
 		this.research_id = research_id;
 	}
 
