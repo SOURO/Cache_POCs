@@ -9,6 +9,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+import org.redisson.config.ReadMode;
+import org.redisson.connection.balancer.RoundRobinLoadBalancer;
 import org.redisson.spring.cache.CacheConfig;
 import org.redisson.spring.cache.RedissonSpringCacheManager;
 import org.springframework.beans.factory.annotation.Value;
@@ -57,6 +59,7 @@ public class AppConfig extends CachingConfigurerSupport {
 
 	@Bean
 	public RedissonClient redissonClient() {
+
 		Config config = new Config();
 		config.useMasterSlaveServers()
 				.setMasterAddress(
@@ -64,7 +67,9 @@ public class AppConfig extends CachingConfigurerSupport {
 				.addSlaveAddress(
 						"redis://souro-cluster-dsbld-002.ltvsn1.0001.use2.cache.amazonaws.com:6379")
 				.addSlaveAddress(
-						"redis://souro-cluster-dsbld-003.ltvsn1.0001.use2.cache.amazonaws.com:6379");
+						"redis://souro-cluster-dsbld-003.ltvsn1.0001.use2.cache.amazonaws.com:6379")
+				.setReadMode(ReadMode.SLAVE)
+				.setLoadBalancer(new RoundRobinLoadBalancer());
 		RedissonClient redisson = Redisson.create(config);
 		return redisson;
 	}

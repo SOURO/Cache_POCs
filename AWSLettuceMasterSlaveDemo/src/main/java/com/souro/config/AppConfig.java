@@ -3,7 +3,8 @@
  */
 package com.souro.config;
 
-import java.time.Duration;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
@@ -21,10 +22,8 @@ import org.springframework.data.redis.connection.RedisClusterConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisNode;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
 
 import com.souro.errorhandler.CustomCacheErrorHandler;
-import com.souro.service.CustomCacheWriter;
 import com.souro.service.ResearchService;
 
 /**
@@ -57,7 +56,7 @@ public class AppConfig extends CachingConfigurerSupport {
 	    }
 
 	    @Bean
-	    RedisConnectionFactory redisConnectionFactory() {
+	    RedisConnectionFactory  redisConnectionFactory() {
 	    	/*RedisClient redisClient = RedisClient.create();
 
 	       Iterable<RedisNode> nodes = Arrays.asList(RedisURI.create("redis://souro-cluster-dsbld-001.ltvsn1.0001.use2.cache.amazonaws.com:6379"),
@@ -69,12 +68,12 @@ public class AppConfig extends CachingConfigurerSupport {
 	        connection.setReadFrom(ReadFrom.MASTER_PREFERRED);*/
 	        
 	        
-	        LettuceConnectionFactory conectionFactory = new LettuceConnectionFactory(redisClusterConfiguration());
+	       LettuceConnectionFactory conectionFactory = new LettuceConnectionFactory(redisClusterConfiguration());
 	        
 	        return conectionFactory;
 	    } 
 
-	    @Bean
+	   /* @Bean
 	    RedisTemplate<Object, Object> redisTemplate() {
 	        RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<Object, Object>();
 	        redisTemplate.setConnectionFactory(redisConnectionFactory());
@@ -85,18 +84,19 @@ public class AppConfig extends CachingConfigurerSupport {
 	    CustomCacheWriter customCacheWriter(){
 	    	CustomCacheWriter customCacheWriter = new CustomCacheWriter(redisConnectionFactory(), Duration.ZERO);
 	    	return customCacheWriter;
-	    }
+	    }*/
 
 	    @Bean
 		public CacheManager cacheManager() {
-	    	RedisCacheConfiguration cacheConfig = RedisCacheConfiguration.defaultCacheConfig();
-	    	cacheConfig.entryTtl(Duration.ofSeconds(ttlExpire));
-	    	//RedisCacheWriter cacheWriter = new RedisCacheWriter();
-	    	//RedisCacheManager rm= new RedisCacheManager(customCacheWriter(),cacheConfig);
-	        RedisCacheManager rm= RedisCacheManager.create(redisConnectionFactory());
-	    	//rm.setExpires(cacheMap);
-	        //rm.setDefaultExpiration(300);
-	    	return rm;
+	    	Map<String, RedisCacheConfiguration> initialCacheConfigurations = new ConcurrentHashMap<String, RedisCacheConfiguration>();
+	    	initialCacheConfigurations.put("Souro_MSCache3", RedisCacheConfiguration.defaultCacheConfig().disableCachingNullValues());
+	    	RedisCacheManager cm = RedisCacheManager.builder(redisConnectionFactory())
+	    			.cacheDefaults(RedisCacheConfiguration.defaultCacheConfig())
+	    			.withInitialCacheConfigurations(initialCacheConfigurations)
+	    			.transactionAware()
+	    			.build();
+	    	//System.out.println("CacheCollection  "+ cm.getCache("Souro_MSCache3").getName());
+	    	return cm;
 	    }
 	
 	@Bean

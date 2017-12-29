@@ -1,15 +1,7 @@
 INDEX VERSION 1.3+D:\Cache_POCs\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1468169750.index
-1949544083.index
-3054230586.index
-3582062998.index
-1541409113.index
-1784832847.index
-3007673989.index
-3528234632.index
-2645426604.index
-2008489062.index
-3422191309.index
 1959266986.index
-3595423827.index
-3126525084.index
+171565102.index
+3054230586.index
+3422191309.index
+1562390180.index
+1949544083.index
