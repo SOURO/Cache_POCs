@@ -14,11 +14,11 @@
 		<servlet.version>3.1.0</servlet.version>
 	</properties>
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>biz.paluch.redis</groupId>
 			<artifactId>lettuce</artifactId>
 			<version>4.4.2.Final</version>
-		</dependency>
+		</dependency> -->
 		<!-- <dependency> <groupId>biz.paluch.redis</groupId> <artifactId>lettuce</artifactId> 
 			<version>4.4.2.Final</version> <classifier>shaded</classifier> </dependency> -->
 		<dependency>
@@ -54,11 +54,15 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.lettuce</groupId>
+			<artifactId>lettuce-core</artifactId>
+			<version>5.0.0.RC1</version>
 		</dependency>
 	</dependencies>
 	<build>

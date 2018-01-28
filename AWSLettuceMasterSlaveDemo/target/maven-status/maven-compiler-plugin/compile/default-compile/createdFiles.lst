@@ -1,4 +1,5 @@
 com\souro\errorhandler\CustomCacheErrorHandler.class
+com\souro\initializer\StartInitializer.class
 com\souro\service\ResearchService.class
 com\souro\config\AppConfig.class
 com\souro\controller\ResearchControllerDemo.class

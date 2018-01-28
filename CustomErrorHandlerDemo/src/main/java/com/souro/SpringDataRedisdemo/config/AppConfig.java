@@ -76,7 +76,7 @@ public class AppConfig extends CachingConfigurerSupport {
     CacheManager cacheManager() {
     	RedisCacheManager rm= new RedisCacheManager(redisTemplate());
     	//rm.setExpires(cacheMap);
-        rm.setDefaultExpiration(300);
+        //rm.setDefaultExpiration(300);
     	return rm;
     }
     
